@@ -37,7 +37,7 @@
   },
   "publishConfig": {
     "access": "public"
-  },
+  },  
   "types": "./dist/index.d.ts",
   "bugs": {
     "url": "https://github.com/withtally/merkle-tree/issues"
