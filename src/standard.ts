@@ -7,7 +7,10 @@ import { checkBounds } from './utils/check-bounds';
 import { throwError } from './utils/throw-error';
 
 function standardLeafHash<T extends any[]>(value: T, types: string[]): Bytes {
-  return keccak256(keccak256(hexToBytes(defaultAbiCoder.encode(types, value))));
+  // change leafHash, to match merkle tree decision.
+  return keccak256(hexToBytes(defaultAbiCoder.encode(types, value)));
+  // hashPair
+  // const hashPair = (a: Bytes, b: Bytes) => keccak256(concatBytes(...[a, b].sort(compareBytes)));
 }
 
 interface StandardMerkleTreeData<T extends any[]> {

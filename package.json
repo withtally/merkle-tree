@@ -1,8 +1,8 @@
 {
-  "name": "@openzeppelin/merkle-tree",
+  "name": "@withtally/merkle-tree",
   "version": "1.0.5",
-  "description": "Utilities to work with merkle trees",
-  "repository": "github:OpenZeppelin/merkle-tree",
+  "description": "Utilities to work with merkle trees, fork from OZ to internal usage on tally",
+  "repository": "github:withtally/merkle-tree",
   "main": "dist/index.js",
   "scripts": {
     "prepublishOnly": "npm run clean",
@@ -18,7 +18,7 @@
     "!**/*.test.*"
   ],
   "keywords": [],
-  "author": "Francisco Giordano <fg@frang.io>",
+  "author": ["Francisco Giordano <fg@frang.io>","Arthur Abeilice <arthur@withtally.com>"],
   "license": "MIT",
   "dependencies": {
     "@ethersproject/abi": "^5.7.0",
