@@ -1,6 +1,14 @@
-import { keccak256 } from 'ethereum-cryptography/keccak';
-import { equalsBytes, hexToBytes } from 'ethereum-cryptography/utils';
-import { defaultAbiCoder } from '@ethersproject/abi';
+// import { keccak256 } from 'ethereum-cryptography/keccak';
+import { equalsBytes, hexToBytes, } from 'ethereum-cryptography/utils';
+// import { defaultAbiCoder } from '@ethersproject/abi';
+// import { solidityPackedKeccak256 } from "@ethersproject/solidity";
+
+import {
+  ethers,
+  solidityPackedKeccak256,
+} from 'ethers';
+
+
 import { Bytes, compareBytes, hex } from './bytes';
 import { getProof, isValidMerkleTree, makeMerkleTree, processProof, renderMerkleTree, MultiProof, getMultiProof, processMultiProof } from './core';
 import { checkBounds } from './utils/check-bounds';
@@ -8,9 +16,7 @@ import { throwError } from './utils/throw-error';
 
 function standardLeafHash<T extends any[]>(value: T, types: string[]): Bytes {
   // change leafHash, to match merkle tree decision.
-  return keccak256(hexToBytes(defaultAbiCoder.encode(types, value)));
-  // hashPair
-  // const hashPair = (a: Bytes, b: Bytes) => keccak256(concatBytes(...[a, b].sort(compareBytes)));
+  return ethers.getBytes(solidityPackedKeccak256(types, value))
 }
 
 interface StandardMerkleTreeData<T extends any[]> {

@@ -1,5 +1,5 @@
 {
-  "name": "@withtally/merkle-tree",
+  "name": "tally-merkle-tree",
   "version": "1.0.5",
   "description": "Utilities to work with merkle trees, fork from OZ to internal usage on tally",
   "repository": {
@@ -21,7 +21,7 @@
     "!**/*.test.*"
   ],
   "keywords": [],
-  "author": "Arthur Abeilice afa7789@gmail.com",
+  "author": "Arthur Abeilice <afa7789@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "@ethersproject/abi": "^5.7.0",
@@ -33,6 +33,7 @@
     "fast-check": "^3.3.0",
     "mocha": "^10.1.0",
     "ts-node": "^10.9.1",
+    "ethers": "^6.4.0",
     "typescript": "^4.8.4"
   },
   "publishConfig": {
