@@ -14,7 +14,7 @@ import { getProof, isValidMerkleTree, makeMerkleTree, processProof, renderMerkle
 import { checkBounds } from './utils/check-bounds';
 import { throwError } from './utils/throw-error';
 
-function standardLeafHash<T extends any[]>(value: T, types: string[]): Bytes {
+export function standardLeafHash<T extends any[]>(value: T, types: string[]): Bytes {
   // change leafHash, to match merkle tree decision.
   return ethers.getBytes(solidityPackedKeccak256(types, value))
 }

@@ -1,1 +1,1 @@
-export { StandardMerkleTree } from './standard';
+export { StandardMerkleTree,standardLeafHash } from './standard';
