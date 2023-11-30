@@ -1,5 +1,6 @@
-# `@openzeppelin/merkle-tree`
+# `@withtally/merkle-tree`
 
+The diff from this to the OZ standard is leafHashing method.
 
 **A JavaScript library to generate merkle trees and merkle proofs.**
 
