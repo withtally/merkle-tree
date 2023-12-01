@@ -2,6 +2,8 @@
 
 The diff from this to the OZ standard is leafHashing method.
 
+we at tally had to make this small change to use in our product the [DAO Launcher](https://docs.tally.xyz/premium-features/dao-launcher)
+
 **A JavaScript library to generate merkle trees and merkle proofs.**
 
 Well suited for airdrops and similar mechanisms in combination with OpenZeppelin Contracts [`MerkleProof`] utilities.
