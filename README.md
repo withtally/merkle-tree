@@ -14,13 +14,13 @@ Well suited for airdrops and similar mechanisms in combination with OpenZeppelin
 ## Quick Start
 
 ```
-npm install @openzeppelin/merkle-tree
+npm install tally-merkle-tree
 ```
 
 ### Building a Tree
 
 ```js
-import { StandardMerkleTree } from "@openzeppelin/merkle-tree";
+import { StandardMerkleTree } from "tally-merkle-tree";
 import fs from "fs";
 
 // (1)
@@ -49,7 +49,7 @@ fs.writeFileSync("tree.json", JSON.stringify(tree.dump()));
 Assume we're looking to generate a proof for the entry that corresponds to address `0x11...11`.
 
 ```js
-import { StandardMerkleTree } from "@openzeppelin/merkle-tree";
+import { StandardMerkleTree } from "tally-merkle-tree";
 import fs from "fs";
 
 // (1)
@@ -126,7 +126,8 @@ This library works on "standard" merkle trees designed for Ethereum smart contra
 From the last three points we get that the hash of a leaf in the tree with value `[addr, amount]` can be computed in Solidity as follows:
 
 ```solidity
-bytes32 leaf = keccak256(bytes.concat(keccak256(abi.encode(addr, amount))));
+// bytes32 leaf = keccak256(bytes.concat(keccak256(abi.encode(addr, amount))));
+bytes32 leaf = keccak256(abi.encodePacked(_user, _amount));
 ```
 
 This is an opinionated design that we believe will offer the best out of the box experience for most users. We may introduce options for customization in the future based on user requests.
@@ -136,7 +137,7 @@ This is an opinionated design that we believe will offer the best out of the box
 ### `StandardMerkleTree`
 
 ```typescript
-import { StandardMerkleTree } from "@openzeppelin/merkle-tree";
+import { StandardMerkleTree } from "tally-merkle-tree";
 ```
 
 ### `StandardMerkleTree.of`
@@ -267,7 +268,8 @@ Returns the leaf hash of the value, as defined in [Standard Merkle Trees](#stand
 Corresponds to the following expression in Solidity:
 
 ```solidity
-bytes32 leaf = keccak256(bytes.concat(keccak256(abi.encode(alice, 100))));
+// bytes32 leaf = keccak256(bytes.concat(keccak256(abi.encode(alice, 100))));
+bytes32 leaf = keccak256(abi.encodePacked(_user, _amount));
 ```
 
 [^1]: The underlying reason for hashing the leaves twice is to prevent the leaf values from being 64 bytes long _prior_ to hashing. Otherwise, the concatenation of a sorted pair of internal nodes in the Merkle tree could be reinterpreted as a leaf value. See [here](https://github.com/OpenZeppelin/openzeppelin-contracts/issues/3091) for more details.
