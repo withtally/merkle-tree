@@ -1,4 +1,4 @@
-# `@withtally/merkle-tree`
+# `tally-merkle-tree`
 
 The diff from this to the OZ standard is leafHashing method.
 
