@@ -1,6 +1,6 @@
 {
-  "name": "tally-merkle-tree",
-  "version": "1.0.5",
+  "name": "@tallyxyz/merkle-tree",
+  "version": "1.0.6",
   "description": "Utilities to work with merkle trees, fork from OZ to internal usage on tally",
   "repository": {
     "type": "git",
