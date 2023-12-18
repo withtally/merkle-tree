@@ -1,4 +1,4 @@
-# `tally-merkle-tree`
+# Tally Merkle Tree generator
 
 The diff from this to the OZ standard is leafHashing method.
 
@@ -16,13 +16,13 @@ Well suited for airdrops and similar mechanisms in combination with OpenZeppelin
 ## Quick Start
 
 ```
-npm install tally-merkle-tree
+npm install @tallyxyz/merkle-tree
 ```
 
 ### Building a Tree
 
 ```js
-import { StandardMerkleTree } from "tally-merkle-tree";
+import { StandardMerkleTree } from "@tallyxyz/merkle-tree";
 import fs from "fs";
 
 // (1)
@@ -51,7 +51,7 @@ fs.writeFileSync("tree.json", JSON.stringify(tree.dump()));
 Assume we're looking to generate a proof for the entry that corresponds to address `0x11...11`.
 
 ```js
-import { StandardMerkleTree } from "tally-merkle-tree";
+import { StandardMerkleTree } from "@tallyxyz/merkle-tree";
 import fs from "fs";
 
 // (1)
@@ -139,7 +139,7 @@ This is an opinionated design that we believe will offer the best out of the box
 ### `StandardMerkleTree`
 
 ```typescript
-import { StandardMerkleTree } from "tally-merkle-tree";
+import { StandardMerkleTree } from "@tallyxyz/merkle-tree";
 ```
 
 ### `StandardMerkleTree.of`
